@@ -1,0 +1,93 @@
+<view>
+	<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+	<view wx:else class="page">
+		<view class="page__db" style="height: 100%">
+			<view class="weui-tab">
+				<view class="list_content" bindchange="changeContent">
+
+					<view hidden='{{currentTab!=0}}'>
+						<view wx:if="{{ reminds.length > 0}}" class="content-item">
+
+							<view class="row" wx:for="{{ reminds }}" wx:key="id" style="margin-top: 30rpx;">
+								<movable-area class="list_item">
+									<movable-view class="itme_wrap" out-of-bounds="true" direction="horizontal" x="{{item.x}}" inertia="true" data-index="{{index}}" bind:touchstart="touchMoveStartHandle" bind:touchend="touchMoveEndHandle" bind:touchmove="handleMovableChange">
+										<view>{{ item.time }}</view>
+										<view>{{ type2Name[item.type] }}</view>
+										<switch id="{{ index }}" checked="{{ item.open}}" style='zoom:.8;z-index: 0;' bindchange="switch1Change"></switch>
+
+									</movable-view>
+									<view>
+										<view class="delete_wrap">
+											<view class="delete_btn">删除</view>
+										</view>
+
+										<view class="delete_wrap" style="right: 120rpx;background-color: grey;">
+											<view bindtap="gotoAddPage" class="delete_btn">编辑</view>
+										</view>
+									</view>
+
+								</movable-area>
+							</view>
+
+						</view>
+
+						<view wx:else>
+							<view class="text-box" style="text-align:center; margin-top: 150rpx;">
+								<text>你还有设置提醒\n</text>
+								<text>快设置你的第一条提醒吧</text>
+							</view>
+						</view>
+
+						<view class="buttom-sp-area" style="margin-top: 150rpx;">
+							<button 
+								type="primary" 
+								plain="true"
+								bindtap="gotoAddPage"
+								>添加</button>
+						</view>
+
+					</view>
+
+					<view class="content-item" hidden='{{currentTab!=1}}'>
+						<view class="userinfo">
+							<block>
+								<image bindtap="bindViewTap" class="userinfo-avatar" style="overflow: auto;" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+								<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+							</block>
+
+							<!-- <view class="lineSplit" style="width: 70%;margin-top: 30rpx;"></view> -->
+
+							<view style="width: 80%;margin-top: 132rpx; " class="weui-cells">
+								<navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="../index/index">
+									<view class="weui-cell__bd">关于我们</view>
+									<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+								</navigator>
+								<navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="../index/index">
+									<view class="weui-cell__bd">我要反馈</view>
+									<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+								</navigator>
+							</view>
+
+						</view>
+
+					</view>
+
+				</view>
+
+				<view class="weui-tabbar">
+					<view id="0" class="weui-tabbar__item {{ currentTab == 0 ? 'weui-bar__item_on' : '' }}" bindtap="clickMenu">
+						<view class="weui-tabbar__icon iconfont icon-ziyuan"></view>
+						<view class="weui-tabbar__label">提醒</view>
+					</view>
+
+					<view id="1" class="weui-tabbar__item {{ currentTab == 1 ? 'weui-bar__item_on' : '' }}" bindtap="clickMenu">
+						<view class="weui-tabbar__icon iconfont icon-wode"></view>
+						<view class="weui-tabbar__label">我的</view>
+					</view>
+
+				</view>
+
+			</view>
+		</view>
+	</view>
+</view>

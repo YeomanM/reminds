@@ -1,0 +1,80 @@
+/* pages/add/add.wxss */
+
+.reminds {
+  height: 42px;
+  border: 2px solid #eee;
+  width: 80%;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-left: 10px;
+
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  float: right;
+
+  right: 20px;
+  position: relative;
+  top: 50%;
+
+  
+  /* border-bottom: 1.9px solid rgb(130, 126, 126);
+  border-right: 1.9px solid rgb(130, 126, 126); */
+
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid skyblue;
+  border-left: 10px solid transparent;
+
+
+  /* border: 2px solid rgb(163, 141, 141); */
+}
+
+.arrow_down {
+  transform: translateY(-50%) translateY(-2px) rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.arrow_up {
+  transform: translateY(-50%) translateY(5px) rotate(-135deg);
+  transition: transform 0.3s;
+}
+
+#pinlv {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+
+.pinlvActive {
+  background-color: skyblue !important;
+  border: none !important;
+  color: white !important;
+}
+
+.frequency {
+  display: inline-block;
+  width: 33%;
+}
+
+.handleBtnArea {
+  /* position: absolute; */
+  margin-top: 50%;
+  width: 100%;
+  padding: 10px;
+}
+
+#add, #cancel {
+  width: 80% !important;
+}
+
+.addHover {
+  background-color: rgb(185, 185, 193) !important;
+  color:#eee !important;
+}
+
+
+

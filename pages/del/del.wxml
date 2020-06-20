@@ -1,0 +1,13 @@
+<view class="list">
+  <view class="row" wx:for="{{list}}" wx:key="id">
+    <movable-area class="list_item">
+     <!-- 坑就在这里，当你向右滑动一点点距离的时候它就停住了，不回去。坑 -->
+      <movable-view class="itmem_wrap" direction="horizontal" inertia="{{true}}" out-of-bounds="{{true}}" x="{{item.x}}" damping="{{60}}" data-index="{{index}}" bind:touchstart="touchMoveStartHandle" bind:touchend="touchMoveEndHandle">
+        {{'滑动删除' + item.id}}
+      </movable-view>
+      <view class="delete_wrap">
+        <view class="delete_btn">删除</view>
+      </view>
+    </movable-area>
+  </view>
+</view>

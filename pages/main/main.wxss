@@ -1,0 +1,143 @@
+/* pages/main/main.wxss */
+.weui-tabbar{position:fixed;bottom:0;left:0;right:0}
+
+/* 分隔线--底部 */
+.line{
+    width: 80%;    /* 分隔线的长度 */
+    margin: auto;
+    height: 0.2x;    /* 分隔线粗细 */
+    text-align: center;
+    font-size: 24rpx;
+    color: #aaa;
+    background: #ccc;
+    margin-top: 5px;
+    margin-bottom: 22px;
+}
+.line span{
+    position: relative;
+    top: -8px;
+    background: #fff;
+    padding: 0px 10px;
+}
+
+
+.lineSplit {
+    width: 90%;    /* 分隔线的长度 */
+    margin: auto;
+    height: 2rpx;
+    background: #ccc;
+    margin-top: 5rpx;
+}
+
+
+/* swtich整体大小 */
+.wx-switch-input{
+  width: 100rpx !important;
+  height: 57rpx !important;
+}
+/* false的样式 */
+.wx-switch-input::before{
+  width: 100rpx !important;
+  height: 53rpx !important;
+}
+/* true的样式 */
+.wx-switch-input::after{
+  width: 57rpx !important;
+  height: 53rpx !important;
+}
+
+.lineSplit{
+ background: #E0E3DA;
+ width: 90%;
+ height: 3rpx;
+}
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.weui-cells::after {
+  border: none !important;
+}
+
+.weui-cells::before {
+  border: none !important;
+}
+
+page {
+  background-color: #efefef;
+}
+
+.row {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+}
+
+.list_item {
+  position: relative;
+  left: -240rpx;
+  width: calc(100% + 240rpx);
+  height: 160rpx;
+}
+
+.itme_wrap {
+  width: calc(100% - 240rpx);
+  display: flex;
+  position: relative;
+  height: 100%;
+  left: 240rpx;
+  z-index: 2;
+  background-color: #fff;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.delete_wrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(219, 54, 54);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+}
+
+.delete_btn {
+  width: 120rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+
+/* .pressAddBtn {
+  border-color: #efefef !important;
+  background-color: aquamarine !important;
+  color: #fff !important;
+} */
+
+/* .releaseAddBtn {
+  border-color: #efefef !important;
+  background-color: aquamarine !important;
+  color: #fff !important;
+} */

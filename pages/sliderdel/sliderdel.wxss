@@ -1,0 +1,54 @@
+page {
+  background-color: #efefef;
+}
+
+.list {
+  padding: 30rpx 30rpx 0;
+}
+
+.row {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+}
+
+.list_item {
+  border-radius: 12rpx;
+  position: relative;
+  left: -240rpx;
+  width: calc(100% + 240rpx);
+  height: 160rpx;
+}
+
+.itmem_wrap {
+  width: calc(100% - 240rpx);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 240rpx;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.delete_wrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(219, 54, 54);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+}
+
+.delete_btn {
+  width: 120rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
